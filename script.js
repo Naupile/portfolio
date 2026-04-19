@@ -177,16 +177,24 @@ document.addEventListener('click', (e) => {
 });
 
 // ===================== MUSIQUE DE MENU =====================
-let menuBgm = null, bgmMuted = false;
+let menuBgm = null, bgmMuted = true; // muted par défaut — joue seulement au clic 🔊
 
 function initBgm() {
-  if (!menuBgm) { menuBgm = new Audio('assets/menu.mp3'); menuBgm.loop = true; menuBgm.volume = 0.28; }
+  if (!menuBgm) {
+    menuBgm = new Audio('assets/retro.mp3');
+    menuBgm.loop = true;
+    menuBgm.volume = 0.14; // atténué pour l'ambiance fée
+  }
 }
-function playBgm() { initBgm(); if (!bgmMuted) menuBgm.play().catch(() => {}); }
+function playBgm() { initBgm(); menuBgm.play().catch(() => {}); }
 function stopBgm()  { if (menuBgm) { menuBgm.pause(); menuBgm.currentTime = 0; } }
 
 const btnSound = document.getElementById('btn-sound');
 if (btnSound) {
+  // État initial : muet — l'utilisateur choisit de lancer
+  btnSound.textContent = '🔇';
+  btnSound.classList.add('muted');
+
   btnSound.addEventListener('click', (e) => {
     e.stopPropagation();
     bgmMuted = !bgmMuted;
@@ -231,11 +239,11 @@ function goTo(name) {
     target.scrollTop = 0;
   }
 
-  // Musique : jouer sur le menu, arrêter sinon
-  if (name === 'menu') {
-    playBgm();
-  } else if (name === 'title') {
+  // Stopper la musique si on revient au titre
+  if (name === 'title') {
     stopBgm();
+    bgmMuted = true;
+    if (btnSound) { btnSound.textContent = '🔇'; btnSound.classList.add('muted'); }
   }
 
   // Relancer les animations de barres à chaque ouverture de l'onglet About
