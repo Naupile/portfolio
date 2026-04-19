@@ -152,6 +152,30 @@ function animateParticles() {
 }
 animateParticles();
 
+// ===================== SON POUSSIÈRE DE FÉE (clic menu) =====================
+let fairyDustAudio = null;
+let fairyDustReady = true; // cooldown pour éviter le spam
+
+function playFairyDust() {
+  if (!fairyDustReady) return;
+  if (!fairyDustAudio) {
+    fairyDustAudio = new Audio('assets/menu.mp3');
+    fairyDustAudio.volume = 0.5;
+  }
+  fairyDustAudio.currentTime = 0;
+  fairyDustAudio.play().catch(() => {});
+  // Stopper après 0.7 s : effet court façon "tintement", pas toute la piste
+  setTimeout(() => { fairyDustAudio.pause(); }, 700);
+  fairyDustReady = false;
+  setTimeout(() => { fairyDustReady = true; }, 700);
+}
+
+// Déclencher sur tous les boutons de navigation (winx-btn, btn-back, btn-start…)
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('button, .level-card, [onclick]');
+  if (btn) playFairyDust();
+});
+
 // ===================== MUSIQUE DE MENU =====================
 let menuBgm = null, bgmMuted = false;
 

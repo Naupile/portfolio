@@ -42,8 +42,9 @@ body {
 /* Fond : image de Pauline, assombrie par un overlay */
 body::before {
   content: '';
-  position: fixed; inset: 0;
+  position: fixed; inset: -20px;          /* légèrement oversized pour éviter les bords du blur */
   background: url('assets/fond-ecran.jpg') center/cover no-repeat;
+  filter: blur(8px);
   z-index: -3;
 }
 body::after {
