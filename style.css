@@ -848,6 +848,16 @@ body::after {
 }
 .loading-label { color: var(--light-pink); font-size: 15px; font-weight: 600; }
 
+/* ===================== CORRECTIF ACCENTS PRESS START 2P ===================== */
+/* Les glyphes accentués de Press Start 2P ont des métriques différentes →  */
+/* ils ressortent plus petits. Ce span compense exactement ce décalage.     */
+.acc {
+  display: inline-block;
+  font-size: 1.28em;
+  vertical-align: -0.1em;
+  line-height: 0;
+}
+
 /* ===================== SCROLLBAR ===================== */
 .screen-scroll::-webkit-scrollbar { width: 4px; }
 .screen-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }

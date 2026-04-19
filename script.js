@@ -177,7 +177,7 @@ document.addEventListener('click', (e) => {
 });
 
 // ===================== MUSIQUE DE MENU =====================
-let menuBgm = null, bgmMuted = true; // muted par défaut — joue seulement au clic 🔊
+let menuBgm = null, bgmMuted = false; // ouvert par défaut
 
 function initBgm() {
   if (!menuBgm) {
@@ -191,9 +191,9 @@ function stopBgm()  { if (menuBgm) { menuBgm.pause(); menuBgm.currentTime = 0; }
 
 const btnSound = document.getElementById('btn-sound');
 if (btnSound) {
-  // État initial : muet — l'utilisateur choisit de lancer
-  btnSound.textContent = '🔇';
-  btnSound.classList.add('muted');
+  // État initial : ouvert
+  btnSound.textContent = '🔊';
+  btnSound.classList.remove('muted');
 
   btnSound.addEventListener('click', (e) => {
     e.stopPropagation();
