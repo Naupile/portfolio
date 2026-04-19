@@ -12,14 +12,11 @@
 </head>
 <body>
 
-<!-- Curseur personnalisé : aile de fée -->
 <div id="cursor-wing" aria-hidden="true"></div>
-
-<!-- Particules scintillantes -->
 <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
 <!-- ========== ÉCRAN TITRE ========== -->
-<section id="screen-title" class="screen active" role="main">
+<section id="screen-title" class="screen active">
   <div class="title-card">
     <div class="title-sparkle-row" aria-hidden="true">✦ ✦ ✦ ✦ ✦</div>
     <h1 class="game-title">
@@ -33,63 +30,143 @@
   </div>
 </section>
 
-<!-- ========== MENU SÉLECTION DE NIVEAU ========== -->
-<section id="screen-menu" class="screen" role="main">
+<!-- ========== MENU SÉLECTION ========== -->
+<section id="screen-menu" class="screen">
   <div class="menu-container">
-    <h2 class="menu-title">✦ SÉLECTION DE NIVEAU ✦</h2>
+    <h2 class="menu-title">✦ ✦ ✦</h2>
     <p class="menu-sub">Choisis ton aventure, voyageuse !</p>
 
-    <div class="levels-grid">
+    <div class="menu-layout">
 
-      <article class="level-card" onclick="goTo('about')" tabindex="0" role="button" aria-label="Niveau 1 : Qui est Pauline">
-        <div class="card-glow"></div>
-        <span class="level-num">NIVEAU 01</span>
-        <div class="level-emoji">🧚‍♀️</div>
-        <h3>Qui est<br>Pauline ?</h3>
-        <p>Identité, compétences<br>& parcours</p>
-        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
-      </article>
+      <!-- Items flottants style Winx -->
+      <nav class="menu-nav">
 
-      <article class="level-card card-pink" onclick="goTo('creations')" tabindex="0" role="button" aria-label="Niveau 2 : Mes Créations">
-        <div class="card-glow"></div>
-        <span class="level-num">NIVEAU 02</span>
-        <div class="level-emoji">🪄</div>
-        <h3>Mes<br>Créations</h3>
-        <p>Posts LinkedIn &amp;<br>projets créatifs</p>
-        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
-      </article>
+        <button class="menu-item mi-1" onclick="goTo('about')">
+          <span class="mi-icon">
+            <!-- Petite fée pixel -->
+            <svg viewBox="0 0 6 8" width="42" height="56" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+              <rect x="1" y="0" width="4" height="1" fill="#D4580A"/>
+              <rect x="0" y="1" width="6" height="1" fill="#D4580A"/>
+              <rect x="1" y="2" width="4" height="1" fill="#FDBCB4"/>
+              <rect x="2" y="2" width="1" height="1" fill="#5B0D91"/>
+              <rect x="4" y="2" width="1" height="1" fill="#5B0D91"/>
+              <rect x="2" y="3" width="2" height="1" fill="#FF7B7B"/>
+              <rect x="0" y="4" width="1" height="2" fill="#C8A0FF" opacity="0.85"/>
+              <rect x="5" y="4" width="1" height="2" fill="#C8A0FF" opacity="0.85"/>
+              <rect x="1" y="4" width="4" height="2" fill="#FF69B4"/>
+              <rect x="2" y="6" width="1" height="2" fill="#87CEEB"/>
+              <rect x="4" y="6" width="1" height="2" fill="#87CEEB"/>
+            </svg>
+          </span>
+          <span class="mi-text">Qui je suis</span>
+        </button>
 
-      <article class="level-card card-game" onclick="goTo('game')" tabindex="0" role="button" aria-label="Niveau 3 : Mini-Jeu Interactif">
-        <div class="card-glow"></div>
-        <span class="level-num">NIVEAU 03</span>
-        <div class="new-badge">NEW!</div>
-        <div class="level-emoji">🎮</div>
-        <h3>Mini-Jeu<br>Interactif</h3>
-        <p>Une journée dans<br>la vie de Pauline</p>
-        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
-      </article>
+        <button class="menu-item mi-2" onclick="goTo('creations')">
+          <span class="mi-icon">
+            <!-- Baguette magique pixel -->
+            <svg viewBox="0 0 6 8" width="42" height="56" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+              <rect x="2" y="0" width="2" height="1" fill="#DDA0DD"/>
+              <rect x="1" y="1" width="4" height="1" fill="#DDA0DD"/>
+              <rect x="0" y="2" width="6" height="1" fill="#C8A0FF"/>
+              <rect x="1" y="3" width="4" height="1" fill="#DDA0DD"/>
+              <rect x="2" y="4" width="2" height="1" fill="#DDA0DD"/>
+              <rect x="3" y="5" width="1" height="3" fill="#FF69B4"/>
+              <rect x="0" y="1" width="1" height="1" fill="#87CEEB" opacity="0.9"/>
+              <rect x="5" y="4" width="1" height="1" fill="#87CEEB" opacity="0.9"/>
+              <rect x="0" y="5" width="1" height="1" fill="#FF69B4" opacity="0.7"/>
+            </svg>
+          </span>
+          <span class="mi-text">Mes créations</span>
+        </button>
+
+        <button class="menu-item mi-3" onclick="goTo('game')">
+          <span class="mi-icon">
+            <!-- Manette pixel -->
+            <svg viewBox="0 0 8 6" width="56" height="42" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+              <rect x="1" y="1" width="6" height="3" fill="#9B4DC3"/>
+              <rect x="0" y="2" width="1" height="2" fill="#9B4DC3"/>
+              <rect x="7" y="2" width="1" height="2" fill="#9B4DC3"/>
+              <rect x="2" y="0" width="1" height="2" fill="#9B4DC3"/>
+              <rect x="5" y="0" width="1" height="2" fill="#9B4DC3"/>
+              <rect x="1" y="2" width="1" height="1" fill="#87CEEB"/>
+              <rect x="2" y="3" width="1" height="1" fill="#87CEEB"/>
+              <rect x="5" y="2" width="1" height="1" fill="#FF69B4"/>
+              <rect x="6" y="2" width="1" height="1" fill="#DDA0DD"/>
+              <rect x="5" y="3" width="1" height="1" fill="#C8A0FF"/>
+            </svg>
+          </span>
+          <span class="mi-text">Le mini-jeu <span class="mi-new">NEW!</span></span>
+        </button>
+
+      </nav>
+
+      <!-- Grande fée pixel côté droit -->
+      <div class="menu-fairy" aria-hidden="true">
+        <svg viewBox="0 0 12 16" width="156" height="208" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated; image-rendering:crisp-edges;">
+          <!-- Cheveux -->
+          <rect x="3" y="0" width="5" height="1" fill="#D4580A"/>
+          <rect x="2" y="1" width="7" height="1" fill="#D4580A"/>
+          <rect x="1" y="2" width="9" height="1" fill="#D4580A"/>
+          <rect x="1" y="3" width="1" height="1" fill="#D4580A"/>
+          <rect x="9" y="3" width="1" height="1" fill="#D4580A"/>
+          <!-- Visage (peau) -->
+          <rect x="2" y="3" width="7" height="5" fill="#FDBCB4"/>
+          <!-- Yeux -->
+          <rect x="3" y="5" width="2" height="1" fill="#5B0D91"/>
+          <rect x="7" y="5" width="2" height="1" fill="#5B0D91"/>
+          <!-- Joues rosées -->
+          <rect x="2" y="6" width="1" height="1" fill="#FFB3C6" opacity="0.7"/>
+          <rect x="9" y="6" width="1" height="1" fill="#FFB3C6" opacity="0.7"/>
+          <!-- Bouche -->
+          <rect x="4" y="7" width="4" height="1" fill="#FF7B7B"/>
+          <!-- Ailes gauche -->
+          <rect x="0" y="8" width="2" height="3" fill="#C8A0FF" opacity="0.85"/>
+          <rect x="0" y="11" width="1" height="1" fill="#C8A0FF" opacity="0.5"/>
+          <!-- Ailes droite -->
+          <rect x="10" y="8" width="2" height="3" fill="#C8A0FF" opacity="0.85"/>
+          <rect x="11" y="11" width="1" height="1" fill="#C8A0FF" opacity="0.5"/>
+          <!-- Tenue -->
+          <rect x="2" y="8" width="8" height="2" fill="#FF69B4"/>
+          <rect x="3" y="10" width="6" height="2" fill="#FF1493"/>
+          <!-- Jupe -->
+          <rect x="2" y="12" width="8" height="1" fill="#9B4DC3"/>
+          <!-- Jambes -->
+          <rect x="4" y="13" width="1" height="1" fill="#FDBCB4"/>
+          <rect x="7" y="13" width="1" height="1" fill="#FDBCB4"/>
+          <!-- Boots bleu clair -->
+          <rect x="3" y="14" width="3" height="1" fill="#87CEEB"/>
+          <rect x="6" y="14" width="3" height="1" fill="#87CEEB"/>
+          <rect x="3" y="15" width="2" height="1" fill="#6AB4D8"/>
+          <rect x="7" y="15" width="2" height="1" fill="#6AB4D8"/>
+          <!-- Petites étoiles flottantes -->
+          <rect x="0" y="1" width="1" height="1" fill="#87CEEB" opacity="0.75"/>
+          <rect x="11" y="4" width="1" height="1" fill="#FF69B4" opacity="0.75"/>
+          <rect x="0" y="13" width="1" height="1" fill="#DDA0DD" opacity="0.65"/>
+        </svg>
+        <div class="fairy-sparkles">✦ ✦ ✦</div>
+      </div>
 
     </div>
 
-    <button class="btn-back" onclick="goTo('title')">◀ RETOUR</button>
+    <p class="menu-hint pixel-mini">▶ Select</p>
+    <button class="btn-back" onclick="goTo('title')">◀ Retour</button>
   </div>
 </section>
 
-<!-- ========== ÉCRAN : QUI EST PAULINE ? ========== -->
-<section id="screen-about" class="screen screen-scroll" role="main">
+<!-- ========== QUI JE SUIS ========== -->
+<section id="screen-about" class="screen screen-scroll">
   <div class="inner-screen">
 
     <div class="inner-header">
-      <h2>🧚‍♀️ Qui est Pauline ?</h2>
+      <h2>🧚‍♀️ Qui je suis</h2>
       <div class="pixel-divider">· · · · · · · · · · · · ·</div>
     </div>
 
     <div class="about-grid">
 
-      <!-- Colonne gauche : photo + contact -->
       <aside class="about-photo-col">
         <div class="photo-frame">
-          <img src="assets/pauline.png" alt="Photo de Pauline Augereau">
+          <img src="assets/pauline.png" alt="Photo de Pauline">
           <div class="photo-sparkle" aria-hidden="true">✦</div>
         </div>
         <div class="contact-box">
@@ -101,17 +178,15 @@
         </div>
       </aside>
 
-      <!-- Colonne droite : bio + compétences -->
       <div class="about-text-col">
 
         <div class="bio-box">
-          <p>Étudiante en <strong>Master COMIN</strong> à l'Université de Rennes II, je suis passionnée de communication digitale, de storytelling et de création de contenus qui ont vraiment du sens.</p>
-          <p>Fan de violet, de jeux rétro et de com' créative — si tu es là, c'est que tu l'as remarqué 😄</p>
+          <p>Je suis Pauline — en Master com' à Rennes, un peu obsédée par les mots, les visuels et les stratégies qui ont vraiment du sens.</p>
+          <p>Fan inconditionnelle du violet, des jeux rétro et de la com' créative. Si tu es là, c'est que tu l'as remarqué 😄</p>
         </div>
 
-        <!-- Hard Skills avec barres style RPG -->
         <div class="stats-section">
-          <h4 class="pixel-mini">✦ HARD SKILLS</h4>
+          <h4 class="pixel-mini">✦ Ce que je sais faire</h4>
           <div class="skill-bars">
             <div class="skill-bar-row">
               <span>Stratégie digitale</span>
@@ -134,51 +209,49 @@
               <div class="bar"><div class="bar-fill" style="--w:55%"></div></div>
             </div>
             <div class="skill-bar-row">
-              <span>Anglais C1</span>
+              <span>Anglais</span>
               <div class="bar"><div class="bar-fill" style="--w:80%"></div></div>
             </div>
           </div>
         </div>
 
-        <!-- Soft Skills en pills -->
         <div class="soft-skills">
-          <h4 class="pixel-mini">✦ SOFT SKILLS</h4>
+          <h4 class="pixel-mini">✦ Ce qu'on dit de moi</h4>
           <div class="pills">
-            <span class="pill">✍️ Aisance rédactionnelle</span>
-            <span class="pill">🎨 Créativité</span>
-            <span class="pill">💬 Bon relationnel</span>
-            <span class="pill">🔍 Curiosité intellectuelle</span>
+            <span class="pill">✍️ À l'aise à l'écrit</span>
+            <span class="pill">🎨 Créative</span>
+            <span class="pill">💬 Bonne relationnelle</span>
+            <span class="pill">🔍 Curieuse</span>
             <span class="pill">🎭 À l'aise à l'oral</span>
-            <span class="pill">👁️ Observation</span>
+            <span class="pill">👁️ Bonne observatrice</span>
           </div>
         </div>
 
-        <!-- Formations style quêtes -->
         <div class="formations">
-          <h4 class="pixel-mini">✦ QUÊTES COMPLÉTÉES</h4>
+          <h4 class="pixel-mini">✦ Mon parcours</h4>
           <div class="quest-list">
             <div class="quest-item quest-active">
               <span class="quest-icon">⚔️</span>
               <div>
-                <strong>Master COMIN</strong> — Université de Rennes II
-                <em>2024–2026 (en cours)</em>
+                <strong>Master COMIN — Rennes II</strong>
+                <em>2024–2026, en cours</em>
                 <span>Communication interne, audit, data, RSE</span>
               </div>
             </div>
             <div class="quest-item quest-done">
               <span class="quest-icon">✅</span>
               <div>
-                <strong>Licence SHS — Info-Communication</strong> — Rennes II
-                <em>2021–2024 · Mention "Assez bien" + Sciences du langage</em>
-                <span>Sociologie, psychologie, anthropologie, info-com</span>
+                <strong>Licence Info-Communication — Rennes II</strong>
+                <em>2021–2024 · Mention Assez bien</em>
+                <span>Sociologie, psychologie, anthropologie</span>
               </div>
             </div>
             <div class="quest-item quest-done">
               <span class="quest-icon">✅</span>
               <div>
-                <strong>Bac Histoire-Géopo &amp; Humanités Litt.</strong> — Lycée Brocéliande
-                <em>2021 · Mention "Bien" + Option Théâtre</em>
-                <span>Politique, littérature, improvisation, confiance en soi</span>
+                <strong>Bac Histoire-Géopo &amp; Humanités — Lycée Brocéliande</strong>
+                <em>2021 · Mention Bien + Option Théâtre</em>
+                <span>Politique, littérature, improvisation</span>
               </div>
             </div>
           </div>
@@ -187,27 +260,26 @@
       </div>
     </div>
 
-    <button class="btn-back" onclick="goTo('menu')">◀ MENU PRINCIPAL</button>
+    <button class="btn-back" onclick="goTo('menu')">◀ Menu principal</button>
   </div>
 </section>
 
-<!-- ========== ÉCRAN : MES CRÉATIONS ========== -->
-<section id="screen-creations" class="screen screen-scroll" role="main">
+<!-- ========== MES CRÉATIONS ========== -->
+<section id="screen-creations" class="screen screen-scroll">
   <div class="inner-screen">
 
     <div class="inner-header">
-      <h2>🪄 Mes Créations</h2>
-      <p class="inner-sub">Posts LinkedIn réalisés pendant les grandes vacances ✦ com' pédago &amp; fun !</p>
+      <h2>🪄 Mes créations</h2>
+      <p class="inner-sub">Posts LinkedIn des grandes vacances — com' pédago &amp; un peu décalée ✦</p>
       <div class="pixel-divider">· · · · · · · · · · · · ·</div>
     </div>
 
-    <!-- Carrousel LinkedIn posts -->
     <div class="creations-grid">
 
       <article class="creation-card">
         <div class="creation-badge">🔍</div>
-        <h3>Columbo<br>Série com' Enquêtes</h3>
-        <p>Et si Columbo menait l'enquête sur vos stratégies de communication ? Une série décalée qui mêle culture pop et best practices com'.</p>
+        <h3>Columbo<br>Série com' enquêtes</h3>
+        <p>Et si un détective en imper' menait l'enquête sur tes stratégies com' ? Une série décalée, de vraies questions.</p>
         <div class="creation-tags">
           <span>Storytelling</span><span>Pop culture</span><span>Pédagogie</span>
         </div>
@@ -216,8 +288,8 @@
 
       <article class="creation-card">
         <div class="creation-badge">📋</div>
-        <h3>Mode d'emploi<br>Carrousels LinkedIn</h3>
-        <p>Un guide pratique et visuel pour créer des carrousels LinkedIn qui engagent — de la structure au design final.</p>
+        <h3>Carrousels LinkedIn<br>Le mode d'emploi</h3>
+        <p>Le format qui cartonne sur LinkedIn, décortiqué slide par slide. Guide pratique, sans blabla.</p>
         <div class="creation-tags">
           <span>LinkedIn</span><span>Carrousel</span><span>Tuto</span>
         </div>
@@ -226,8 +298,8 @@
 
       <article class="creation-card">
         <div class="creation-badge">📊</div>
-        <h3>Les Outils d'Analyse<br>Le Benchmark</h3>
-        <p>Démystifier le benchmark : comment analyser la concurrence avec méthode, sans se noyer dans les données.</p>
+        <h3>Les outils d'analyse<br>Le benchmark</h3>
+        <p>Surveiller la concurrence sans s'y noyer — méthode, exemples, mise en pratique directe.</p>
         <div class="creation-tags">
           <span>Analyse</span><span>Stratégie</span><span>Benchmark</span>
         </div>
@@ -236,8 +308,8 @@
 
       <article class="creation-card">
         <div class="creation-badge">🎨</div>
-        <h3>Charte Graphique<br>Le Guide</h3>
-        <p>Comprendre et créer sa charte graphique : les fondamentaux de l'identité visuelle expliqués simplement.</p>
+        <h3>Charte graphique<br>Pourquoi c'est la base</h3>
+        <p>Ce qu'une bonne charte change vraiment à ta communication — et comment en construire une qui te ressemble.</p>
         <div class="creation-tags">
           <span>Design</span><span>Identité visuelle</span><span>Canva</span>
         </div>
@@ -246,34 +318,33 @@
 
     </div>
 
-    <!-- Expériences pro -->
     <div class="xp-section">
-      <h4 class="pixel-mini">✦ EXPÉRIENCES PROFESSIONNELLES</h4>
+      <h4 class="pixel-mini">✦ Expériences</h4>
       <div class="xp-grid">
         <div class="xp-card">
-          <strong>Alternance Com' Digitale &amp; Événementielle</strong>
+          <strong>Alternance com' digitale &amp; événementielle</strong>
           <span>EdTech Grand Ouest · Rennes · 2025–2026</span>
-          <p>Vision stratégique, emailing, gestion LinkedIn &amp; site, Brevo, Wordpress, Waalaxy, Assoconnect</p>
+          <p>Vision stratégique, emailing, LinkedIn, site, Brevo, Wordpress, Waalaxy…</p>
         </div>
         <div class="xp-card">
-          <strong>Projet com' pour Corteam Conseil</strong>
+          <strong>Projet com' — Corteam Conseil</strong>
           <span>Rennes · 2024–2025</span>
-          <p>Planning éditorial, benchmark, SWOT, carrousels LinkedIn engageants</p>
+          <p>Planning éditorial, benchmark, SWOT, carrousels LinkedIn</p>
         </div>
         <div class="xp-card">
-          <strong>Stagiaire "Com Retail" — Yves Rocher</strong>
+          <strong>Stage com' retail — Yves Rocher</strong>
           <span>Rennes · Février 2024</span>
-          <p>Suite Office, pige concurrentielle, réalisation de PLV</p>
+          <p>Suite Office, pige concurrentielle, PLV</p>
         </div>
       </div>
     </div>
 
-    <button class="btn-back" onclick="goTo('menu')">◀ MENU PRINCIPAL</button>
+    <button class="btn-back" onclick="goTo('menu')">◀ Menu principal</button>
   </div>
 </section>
 
-<!-- ========== ÉCRAN : CHARGEMENT JEU ========== -->
-<section id="screen-game" class="screen" role="main">
+<!-- ========== CHARGEMENT JEU ========== -->
+<section id="screen-game" class="screen">
   <div class="game-redirect">
     <h2 class="pixel-title blink-soft">🎮 CHARGEMENT...</h2>
     <div class="loading-bar-wrap">
@@ -281,9 +352,9 @@
         <div class="loading-fill" id="loading-fill"></div>
       </div>
     </div>
-    <p class="loading-label">Préparation du mini-jeu interactif !</p>
-    <p class="pixel-mini" style="margin-top:8px;">UNE JOURNÉE DANS LA VIE DE PAULINE</p>
-    <button class="btn-back" style="margin-top:30px;" onclick="cancelGame()">✕ ANNULER</button>
+    <p class="loading-label">Préparation du mini-jeu !</p>
+    <p class="pixel-mini" style="margin-top:8px; color:var(--lavender)">UNE JOURNÉE DANS LA VIE DE PAULINE</p>
+    <button class="btn-back" style="margin-top:30px;" onclick="cancelGame()">✕ Annuler</button>
   </div>
 </section>
 
