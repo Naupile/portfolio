@@ -152,6 +152,26 @@ function animateParticles() {
 }
 animateParticles();
 
+// ===================== MUSIQUE DE MENU =====================
+let menuBgm = null, bgmMuted = false;
+
+function initBgm() {
+  if (!menuBgm) { menuBgm = new Audio('assets/menu.mp3'); menuBgm.loop = true; menuBgm.volume = 0.28; }
+}
+function playBgm() { initBgm(); if (!bgmMuted) menuBgm.play().catch(() => {}); }
+function stopBgm()  { if (menuBgm) { menuBgm.pause(); menuBgm.currentTime = 0; } }
+
+const btnSound = document.getElementById('btn-sound');
+if (btnSound) {
+  btnSound.addEventListener('click', (e) => {
+    e.stopPropagation();
+    bgmMuted = !bgmMuted;
+    btnSound.textContent = bgmMuted ? '🔇' : '🔊';
+    btnSound.classList.toggle('muted', bgmMuted);
+    bgmMuted ? (menuBgm && menuBgm.pause()) : playBgm();
+  });
+}
+
 // ===================== NAVIGATION ENTRE ÉCRANS =====================
 const screens = {
   title:     document.getElementById('screen-title'),
@@ -185,6 +205,13 @@ function goTo(name) {
   // Remonter en haut sur les écrans défilants
   if (target.classList.contains('screen-scroll')) {
     target.scrollTop = 0;
+  }
+
+  // Musique : jouer sur le menu, arrêter sinon
+  if (name === 'menu') {
+    playBgm();
+  } else if (name === 'title') {
+    stopBgm();
   }
 
   // Relancer les animations de barres à chaque ouverture de l'onglet About

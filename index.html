@@ -32,124 +32,51 @@
 
 <!-- ========== MENU SÉLECTION ========== -->
 <section id="screen-menu" class="screen">
-  <div class="menu-container">
-    <h2 class="menu-title">✦ ✦ ✦</h2>
-    <p class="menu-sub">Choisis ton aventure !</p>
 
-    <div class="menu-layout">
+  <div class="menu-bg-deco" aria-hidden="true">
+    <span>✦</span><span>✧</span><span>⋆</span><span>✦</span>
+    <span>✧</span><span>⋆</span><span>✦</span><span>✧</span>
+  </div>
 
-      <!-- Items flottants style Winx -->
-      <nav class="menu-nav">
+  <div class="menu-winx-wrap">
 
-        <button class="menu-item mi-1" onclick="goTo('about')">
-          <span class="mi-icon">
-            <!-- Petite fée pixel -->
-            <svg viewBox="0 0 6 8" width="42" height="56" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
-              <rect x="1" y="0" width="4" height="1" fill="#D4580A"/>
-              <rect x="0" y="1" width="6" height="1" fill="#D4580A"/>
-              <rect x="1" y="2" width="4" height="1" fill="#FDBCB4"/>
-              <rect x="2" y="2" width="1" height="1" fill="#5B0D91"/>
-              <rect x="4" y="2" width="1" height="1" fill="#5B0D91"/>
-              <rect x="2" y="3" width="2" height="1" fill="#FF7B7B"/>
-              <rect x="0" y="4" width="1" height="2" fill="#C8A0FF" opacity="0.85"/>
-              <rect x="5" y="4" width="1" height="2" fill="#C8A0FF" opacity="0.85"/>
-              <rect x="1" y="4" width="4" height="2" fill="#FF69B4"/>
-              <rect x="2" y="6" width="1" height="2" fill="#87CEEB"/>
-              <rect x="4" y="6" width="1" height="2" fill="#87CEEB"/>
-            </svg>
-          </span>
-          <span class="mi-text">Qui je suis</span>
+    <!-- Panneau gauche : boutons style DS Winx -->
+    <div class="menu-panel-left">
+      <div class="menu-winx-logo">✦ PAULINE ✦</div>
+      <p class="menu-winx-sub">Stratège Digitale</p>
+
+      <nav class="menu-winx-nav">
+        <button class="winx-btn" onclick="goTo('about')">
+          🧚‍♀️ Qui je suis
         </button>
-
-        <button class="menu-item mi-2" onclick="goTo('creations')">
-          <span class="mi-icon">
-            <!-- Baguette magique pixel -->
-            <svg viewBox="0 0 6 8" width="42" height="56" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
-              <rect x="2" y="0" width="2" height="1" fill="#DDA0DD"/>
-              <rect x="1" y="1" width="4" height="1" fill="#DDA0DD"/>
-              <rect x="0" y="2" width="6" height="1" fill="#C8A0FF"/>
-              <rect x="1" y="3" width="4" height="1" fill="#DDA0DD"/>
-              <rect x="2" y="4" width="2" height="1" fill="#DDA0DD"/>
-              <rect x="3" y="5" width="1" height="3" fill="#FF69B4"/>
-              <rect x="0" y="1" width="1" height="1" fill="#87CEEB" opacity="0.9"/>
-              <rect x="5" y="4" width="1" height="1" fill="#87CEEB" opacity="0.9"/>
-              <rect x="0" y="5" width="1" height="1" fill="#FF69B4" opacity="0.7"/>
-            </svg>
-          </span>
-          <span class="mi-text">Mes créations</span>
+        <button class="winx-btn" onclick="goTo('creations')">
+          🪄 Mes créations
         </button>
-
-        <button class="menu-item mi-3" onclick="goTo('game')">
-          <span class="mi-icon">
-            <!-- Manette pixel -->
-            <svg viewBox="0 0 8 6" width="56" height="42" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
-              <rect x="1" y="1" width="6" height="3" fill="#9B4DC3"/>
-              <rect x="0" y="2" width="1" height="2" fill="#9B4DC3"/>
-              <rect x="7" y="2" width="1" height="2" fill="#9B4DC3"/>
-              <rect x="2" y="0" width="1" height="2" fill="#9B4DC3"/>
-              <rect x="5" y="0" width="1" height="2" fill="#9B4DC3"/>
-              <rect x="1" y="2" width="1" height="1" fill="#87CEEB"/>
-              <rect x="2" y="3" width="1" height="1" fill="#87CEEB"/>
-              <rect x="5" y="2" width="1" height="1" fill="#FF69B4"/>
-              <rect x="6" y="2" width="1" height="1" fill="#DDA0DD"/>
-              <rect x="5" y="3" width="1" height="1" fill="#C8A0FF"/>
-            </svg>
-          </span>
-          <span class="mi-text">Le mini-jeu <span class="mi-new">NOUVEAU!</span></span>
+        <button class="winx-btn winx-btn-new" onclick="goTo('game')">
+          🎮 Le mini-jeu
+          <span class="winx-new-badge">NOUVEAU !</span>
         </button>
-
       </nav>
 
-      <!-- Grande fée pixel côté droit -->
-      <div class="menu-fairy" aria-hidden="true">
-        <svg viewBox="0 0 12 16" width="156" height="208" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated; image-rendering:crisp-edges;">
-          <!-- Cheveux -->
-          <rect x="3" y="0" width="5" height="1" fill="#D4580A"/>
-          <rect x="2" y="1" width="7" height="1" fill="#D4580A"/>
-          <rect x="1" y="2" width="9" height="1" fill="#D4580A"/>
-          <rect x="1" y="3" width="1" height="1" fill="#D4580A"/>
-          <rect x="9" y="3" width="1" height="1" fill="#D4580A"/>
-          <!-- Visage (peau) -->
-          <rect x="2" y="3" width="7" height="5" fill="#FDBCB4"/>
-          <!-- Yeux -->
-          <rect x="3" y="5" width="2" height="1" fill="#5B0D91"/>
-          <rect x="7" y="5" width="2" height="1" fill="#5B0D91"/>
-          <!-- Joues rosées -->
-          <rect x="2" y="6" width="1" height="1" fill="#FFB3C6" opacity="0.7"/>
-          <rect x="9" y="6" width="1" height="1" fill="#FFB3C6" opacity="0.7"/>
-          <!-- Bouche -->
-          <rect x="4" y="7" width="4" height="1" fill="#FF7B7B"/>
-          <!-- Ailes gauche -->
-          <rect x="0" y="8" width="2" height="3" fill="#C8A0FF" opacity="0.85"/>
-          <rect x="0" y="11" width="1" height="1" fill="#C8A0FF" opacity="0.5"/>
-          <!-- Ailes droite -->
-          <rect x="10" y="8" width="2" height="3" fill="#C8A0FF" opacity="0.85"/>
-          <rect x="11" y="11" width="1" height="1" fill="#C8A0FF" opacity="0.5"/>
-          <!-- Tenue -->
-          <rect x="2" y="8" width="8" height="2" fill="#FF69B4"/>
-          <rect x="3" y="10" width="6" height="2" fill="#FF1493"/>
-          <!-- Jupe -->
-          <rect x="2" y="12" width="8" height="1" fill="#9B4DC3"/>
-          <!-- Jambes -->
-          <rect x="4" y="13" width="1" height="1" fill="#FDBCB4"/>
-          <rect x="7" y="13" width="1" height="1" fill="#FDBCB4"/>
-          <!-- Boots bleu clair -->
-          <rect x="3" y="14" width="3" height="1" fill="#87CEEB"/>
-          <rect x="6" y="14" width="3" height="1" fill="#87CEEB"/>
-          <rect x="3" y="15" width="2" height="1" fill="#6AB4D8"/>
-          <rect x="7" y="15" width="2" height="1" fill="#6AB4D8"/>
-          <!-- Petites étoiles flottantes -->
-          <rect x="0" y="1" width="1" height="1" fill="#87CEEB" opacity="0.75"/>
-          <rect x="11" y="4" width="1" height="1" fill="#FF69B4" opacity="0.75"/>
-          <rect x="0" y="13" width="1" height="1" fill="#DDA0DD" opacity="0.65"/>
-        </svg>
-        <div class="fairy-sparkles">✦ ✦ ✦</div>
-      </div>
-
+      <p class="menu-select-hint">▶ Sélectionner</p>
+      <button class="btn-back-small" onclick="goTo('title')">◀ Retour</button>
+      <button class="btn-sound" id="btn-sound" title="Musique">🔊</button>
     </div>
 
-    <p class="menu-hint pixel-mini">▶ Selection</p>
-    <button class="btn-back" onclick="goTo('title')">◀ Retour</button>
+    <!-- Pauline comme personnage principal, comme Bloom -->
+    <div class="menu-char-wrap">
+      <div class="menu-char-halo" aria-hidden="true"></div>
+      <img src="assets/pauline.jpg" alt="Pauline" class="menu-char-photo">
+      <div class="char-stars" aria-hidden="true">
+        <span class="cstar cs1">✦</span>
+        <span class="cstar cs2">✧</span>
+        <span class="cstar cs3">⋆</span>
+        <span class="cstar cs4">✦</span>
+        <span class="cstar cs5">✧</span>
+        <span class="cstar cs6">⋆</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
