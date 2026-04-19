@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pauline Augereau ✦ Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/etincelle.png" type="image/png">
+</head>
+<body>
+
+<!-- Curseur personnalisé : aile de fée -->
+<div id="cursor-wing" aria-hidden="true"></div>
+
+<!-- Particules scintillantes -->
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- ========== ÉCRAN TITRE ========== -->
+<section id="screen-title" class="screen active" role="main">
+  <div class="title-card">
+    <div class="title-sparkle-row" aria-hidden="true">✦ ✦ ✦ ✦ ✦</div>
+    <h1 class="game-title">
+      <span>PAULINE</span>
+      <span>AUGEREAU</span>
+    </h1>
+    <p class="tagline">Stratège Digitale</p>
+    <p class="tagline-sub">pour une com' qui a du <em>SENS</em></p>
+    <button class="btn-start blink-soft" id="btn-start">▶ PRESS START ◀</button>
+    <p class="title-credits">✦ COM' · STRATÉGIE · CRÉATIVITÉ ✦</p>
+  </div>
+</section>
+
+<!-- ========== MENU SÉLECTION DE NIVEAU ========== -->
+<section id="screen-menu" class="screen" role="main">
+  <div class="menu-container">
+    <h2 class="menu-title">✦ SÉLECTION DE NIVEAU ✦</h2>
+    <p class="menu-sub">Choisis ton aventure, voyageuse !</p>
+
+    <div class="levels-grid">
+
+      <article class="level-card" onclick="goTo('about')" tabindex="0" role="button" aria-label="Niveau 1 : Qui est Pauline">
+        <div class="card-glow"></div>
+        <span class="level-num">NIVEAU 01</span>
+        <div class="level-emoji">🧚‍♀️</div>
+        <h3>Qui est<br>Pauline ?</h3>
+        <p>Identité, compétences<br>& parcours</p>
+        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
+      </article>
+
+      <article class="level-card card-pink" onclick="goTo('creations')" tabindex="0" role="button" aria-label="Niveau 2 : Mes Créations">
+        <div class="card-glow"></div>
+        <span class="level-num">NIVEAU 02</span>
+        <div class="level-emoji">🪄</div>
+        <h3>Mes<br>Créations</h3>
+        <p>Posts LinkedIn &amp;<br>projets créatifs</p>
+        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
+      </article>
+
+      <article class="level-card card-game" onclick="goTo('game')" tabindex="0" role="button" aria-label="Niveau 3 : Mini-Jeu Interactif">
+        <div class="card-glow"></div>
+        <span class="level-num">NIVEAU 03</span>
+        <div class="new-badge">NEW!</div>
+        <div class="level-emoji">🎮</div>
+        <h3>Mini-Jeu<br>Interactif</h3>
+        <p>Une journée dans<br>la vie de Pauline</p>
+        <div class="card-stars"><span>★</span><span>★</span><span>★</span></div>
+      </article>
+
+    </div>
+
+    <button class="btn-back" onclick="goTo('title')">◀ RETOUR</button>
+  </div>
+</section>
+
+<!-- ========== ÉCRAN : QUI EST PAULINE ? ========== -->
+<section id="screen-about" class="screen screen-scroll" role="main">
+  <div class="inner-screen">
+
+    <div class="inner-header">
+      <h2>🧚‍♀️ Qui est Pauline ?</h2>
+      <div class="pixel-divider">· · · · · · · · · · · · ·</div>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Colonne gauche : photo + contact -->
+      <aside class="about-photo-col">
+        <div class="photo-frame">
+          <img src="assets/pauline.png" alt="Photo de Pauline Augereau">
+          <div class="photo-sparkle" aria-hidden="true">✦</div>
+        </div>
+        <div class="contact-box">
+          <p>📍 Rennes</p>
+          <p>✉️ naupileee@gmail.com</p>
+          <p>📞 06.19.45.93.67</p>
+          <p>🚗 Permis BVA</p>
+          <a href="https://www.linkedin.com/in/paulineaugereau/" target="_blank" rel="noopener" class="btn-linkedin">LinkedIn ↗</a>
+        </div>
+      </aside>
+
+      <!-- Colonne droite : bio + compétences -->
+      <div class="about-text-col">
+
+        <div class="bio-box">
+          <p>Étudiante en <strong>Master COMIN</strong> à l'Université de Rennes II, je suis passionnée de communication digitale, de storytelling et de création de contenus qui ont vraiment du sens.</p>
+          <p>Fan de violet, de jeux rétro et de com' créative — si tu es là, c'est que tu l'as remarqué 😄</p>
+        </div>
+
+        <!-- Hard Skills avec barres style RPG -->
+        <div class="stats-section">
+          <h4 class="pixel-mini">✦ HARD SKILLS</h4>
+          <div class="skill-bars">
+            <div class="skill-bar-row">
+              <span>Stratégie digitale</span>
+              <div class="bar"><div class="bar-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span>Création de contenus</span>
+              <div class="bar"><div class="bar-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span>Canva &amp; Pack Office</span>
+              <div class="bar"><div class="bar-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span>Suite Adobe</span>
+              <div class="bar"><div class="bar-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span>HTML / CSS / JS</span>
+              <div class="bar"><div class="bar-fill" style="--w:55%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span>Anglais C1</span>
+              <div class="bar"><div class="bar-fill" style="--w:80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills en pills -->
+        <div class="soft-skills">
+          <h4 class="pixel-mini">✦ SOFT SKILLS</h4>
+          <div class="pills">
+            <span class="pill">✍️ Aisance rédactionnelle</span>
+            <span class="pill">🎨 Créativité</span>
+            <span class="pill">💬 Bon relationnel</span>
+            <span class="pill">🔍 Curiosité intellectuelle</span>
+            <span class="pill">🎭 À l'aise à l'oral</span>
+            <span class="pill">👁️ Observation</span>
+          </div>
+        </div>
+
+        <!-- Formations style quêtes -->
+        <div class="formations">
+          <h4 class="pixel-mini">✦ QUÊTES COMPLÉTÉES</h4>
+          <div class="quest-list">
+            <div class="quest-item quest-active">
+              <span class="quest-icon">⚔️</span>
+              <div>
+                <strong>Master COMIN</strong> — Université de Rennes II
+                <em>2024–2026 (en cours)</em>
+                <span>Communication interne, audit, data, RSE</span>
+              </div>
+            </div>
+            <div class="quest-item quest-done">
+              <span class="quest-icon">✅</span>
+              <div>
+                <strong>Licence SHS — Info-Communication</strong> — Rennes II
+                <em>2021–2024 · Mention "Assez bien" + Sciences du langage</em>
+                <span>Sociologie, psychologie, anthropologie, info-com</span>
+              </div>
+            </div>
+            <div class="quest-item quest-done">
+              <span class="quest-icon">✅</span>
+              <div>
+                <strong>Bac Histoire-Géopo &amp; Humanités Litt.</strong> — Lycée Brocéliande
+                <em>2021 · Mention "Bien" + Option Théâtre</em>
+                <span>Politique, littérature, improvisation, confiance en soi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goTo('menu')">◀ MENU PRINCIPAL</button>
+  </div>
+</section>
+
+<!-- ========== ÉCRAN : MES CRÉATIONS ========== -->
+<section id="screen-creations" class="screen screen-scroll" role="main">
+  <div class="inner-screen">
+
+    <div class="inner-header">
+      <h2>🪄 Mes Créations</h2>
+      <p class="inner-sub">Posts LinkedIn réalisés pendant les grandes vacances ✦ com' pédago &amp; fun !</p>
+      <div class="pixel-divider">· · · · · · · · · · · · ·</div>
+    </div>
+
+    <!-- Carrousel LinkedIn posts -->
+    <div class="creations-grid">
+
+      <article class="creation-card">
+        <div class="creation-badge">🔍</div>
+        <h3>Columbo<br>Série com' Enquêtes</h3>
+        <p>Et si Columbo menait l'enquête sur vos stratégies de communication ? Une série décalée qui mêle culture pop et best practices com'.</p>
+        <div class="creation-tags">
+          <span>Storytelling</span><span>Pop culture</span><span>Pédagogie</span>
+        </div>
+        <a href="https://www.linkedin.com/posts/paulineaugereau_enqu%C3%AAtes-com-columbo-activity-7359493581054627840-Ndpa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOCdY0BZtNltAw5tTliQuZ6Ewur_p-0UL8" target="_blank" rel="noopener" class="btn-see">Voir sur LinkedIn ↗</a>
+      </article>
+
+      <article class="creation-card">
+        <div class="creation-badge">📋</div>
+        <h3>Mode d'emploi<br>Carrousels LinkedIn</h3>
+        <p>Un guide pratique et visuel pour créer des carrousels LinkedIn qui engagent — de la structure au design final.</p>
+        <div class="creation-tags">
+          <span>LinkedIn</span><span>Carrousel</span><span>Tuto</span>
+        </div>
+        <a href="https://www.linkedin.com/posts/paulineaugereau_carrousels-linkedin-le-mode-demploi-activity-7350766100885753859-OkCR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOCdY0BZtNltAw5tTliQuZ6Ewur_p-0UL8" target="_blank" rel="noopener" class="btn-see">Voir sur LinkedIn ↗</a>
+      </article>
+
+      <article class="creation-card">
+        <div class="creation-badge">📊</div>
+        <h3>Les Outils d'Analyse<br>Le Benchmark</h3>
+        <p>Démystifier le benchmark : comment analyser la concurrence avec méthode, sans se noyer dans les données.</p>
+        <div class="creation-tags">
+          <span>Analyse</span><span>Stratégie</span><span>Benchmark</span>
+        </div>
+        <a href="https://www.linkedin.com/posts/paulineaugereau_les-outils-danalyse-le-benchmark-activity-7355839568027283457-m3jx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOCdY0BZtNltAw5tTliQuZ6Ewur_p-0UL8" target="_blank" rel="noopener" class="btn-see">Voir sur LinkedIn ↗</a>
+      </article>
+
+      <article class="creation-card">
+        <div class="creation-badge">🎨</div>
+        <h3>Charte Graphique<br>Le Guide</h3>
+        <p>Comprendre et créer sa charte graphique : les fondamentaux de l'identité visuelle expliqués simplement.</p>
+        <div class="creation-tags">
+          <span>Design</span><span>Identité visuelle</span><span>Canva</span>
+        </div>
+        <a href="https://www.linkedin.com/posts/paulineaugereau_charte-graphique-pourquoi-cest-la-base-activity-7348229348019097600-Fqgq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOCdY0BZtNltAw5tTliQuZ6Ewur_p-0UL8" target="_blank" rel="noopener" class="btn-see">Voir sur LinkedIn ↗</a>
+      </article>
+
+    </div>
+
+    <!-- Expériences pro -->
+    <div class="xp-section">
+      <h4 class="pixel-mini">✦ EXPÉRIENCES PROFESSIONNELLES</h4>
+      <div class="xp-grid">
+        <div class="xp-card">
+          <strong>Alternance Com' Digitale &amp; Événementielle</strong>
+          <span>EdTech Grand Ouest · Rennes · 2025–2026</span>
+          <p>Vision stratégique, emailing, gestion LinkedIn &amp; site, Brevo, Wordpress, Waalaxy, Assoconnect</p>
+        </div>
+        <div class="xp-card">
+          <strong>Projet com' pour Corteam Conseil</strong>
+          <span>Rennes · 2024–2025</span>
+          <p>Planning éditorial, benchmark, SWOT, carrousels LinkedIn engageants</p>
+        </div>
+        <div class="xp-card">
+          <strong>Stagiaire "Com Retail" — Yves Rocher</strong>
+          <span>Rennes · Février 2024</span>
+          <p>Suite Office, pige concurrentielle, réalisation de PLV</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goTo('menu')">◀ MENU PRINCIPAL</button>
+  </div>
+</section>
+
+<!-- ========== ÉCRAN : CHARGEMENT JEU ========== -->
+<section id="screen-game" class="screen" role="main">
+  <div class="game-redirect">
+    <h2 class="pixel-title blink-soft">🎮 CHARGEMENT...</h2>
+    <div class="loading-bar-wrap">
+      <div class="loading-bar">
+        <div class="loading-fill" id="loading-fill"></div>
+      </div>
+    </div>
+    <p class="loading-label">Préparation du mini-jeu interactif !</p>
+    <p class="pixel-mini" style="margin-top:8px;">UNE JOURNÉE DANS LA VIE DE PAULINE</p>
+    <button class="btn-back" style="margin-top:30px;" onclick="cancelGame()">✕ ANNULER</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

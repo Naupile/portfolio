@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Une journée dans la vie de Pauline</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="etincelle.png">
+
+</head>
+
+<body>
+
+<audio id="backgroundNoise" src="jeuinteractifson.mp3"></audio>
+
+<div class="game-container">
+
+<div class="window-bar">
+<div class="window-bar-left">
+<span class="dot red"></span>
+<span class="dot yellow"></span>
+<span class="dot green"></span>
+<span class="window-title">Slack – #marketing</span>
+</div>
+
+<div class="game-stats" aria-label="Statistiques de partie">
+<div class="stat-pill">
+<span class="stat-label">Strat</span>
+<span id="stat-strategy" class="stat-value">0</span>
+</div>
+<div class="stat-pill">
+<span class="stat-label">Buzz</span>
+<span id="stat-buzz" class="stat-value">0</span>
+</div>
+<div class="stat-pill">
+<span class="stat-label">Crise</span>
+<span id="stat-crisis" class="stat-value">0</span>
+</div>
+</div>
+</div>
+
+<h1>Une journée dans la vie de Pauline</h1>
+<h2>Mini-jeu interactif</h2>
+
+<div class="progress-bar">
+<div id="progress"></div>
+</div>
+
+<div class="story-box">
+<p id="story">
+9h00. Vous êtes communicante dans une startup EdTech.  
+Un client vous écrit : "On veut devenir viral."
+</p>
+</div>
+
+<div id="choices">
+
+<button onclick="analyse()">Analyser la cible</button>
+
+<button onclick="tiktok()">Lancer une campagne TikTok</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
