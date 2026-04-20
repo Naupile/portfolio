@@ -543,18 +543,9 @@ body::after {
   );
 }
 
-/* Coins déco bleu */
+/* Coins déco supprimés — remplacés par la win98-bar */
 .inner-screen::before,
-.inner-screen::after {
-  content: '';
-  position: absolute;
-  width: 18px; height: 18px;
-  border-color: var(--blue);
-  border-style: solid;
-  z-index: 1;
-}
-.inner-screen::before { top: 6px;    left: 6px;    border-width: 2px 0 0 2px; }
-.inner-screen::after  { bottom: 6px; right: 6px;   border-width: 0 2px 2px 0; }
+.inner-screen::after { display: none; }
 
 .inner-header {
   text-align: center;
@@ -843,7 +834,7 @@ body::after {
 }
 .loading-fill {
   height: 100%; width: 0;
-  background: linear-gradient(90deg, var(--violet), var(--blue), var(--pink));
+  background: linear-gradient(90deg, var(--light-pink), var(--pink), var(--blue), var(--violet));
 }
 .loading-label { color: var(--light-pink); font-size: 15px; font-weight: 600; }
 
