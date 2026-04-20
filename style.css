@@ -935,7 +935,10 @@ body::after {
   .about-photo-col { text-align: center; }
 
   /* Menu : empiler photo + boutons verticalement */
-  .menu-winx-wrap   { flex-direction: column; align-items: center; gap: 16px; }
+  /* overflow-y: auto permet de scroller si le contenu dépasse la hauteur de l'écran */
+  #screen-menu      { overflow-y: auto; align-items: flex-start; }
+  .menu-winx-wrap   { flex-direction: column; align-items: center; gap: 16px;
+                      padding: 16px 0 24px; }
   .menu-panel-left  { flex: none; width: 100%; max-width: 340px; }
   .menu-char-wrap   { min-height: 200px; order: -1; } /* photo au-dessus des boutons */
   .menu-char-photo  { width: 150px; height: 195px; }

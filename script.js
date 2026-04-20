@@ -267,9 +267,8 @@ function resetSkillBars() {
 
 // ===================== LANCEMENT DU JEU =====================
 function launchGame() {
-  stopBgm();
-  bgmMuted = true;
-  if (btnSound) { btnSound.textContent = '🔇'; btnSound.classList.add('muted'); }
+  // Mettre en pause sans changer bgmMuted : la musique reprendra au retour sur le menu
+  if (menuBgm) menuBgm.pause();
 
   Object.values(screens).forEach(s => s.classList.remove('active'));
   screens.game.classList.add('active');
