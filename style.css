@@ -341,8 +341,10 @@ body::after {
 
 .tagline-sub em {
   font-style: normal; color: var(--blue);
-  text-decoration: underline wavy var(--hot-pink);
-  text-underline-offset: 4px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.72em;
+  text-decoration: none;
+  vertical-align: 0.05em;
 }
 
 .btn-start {
