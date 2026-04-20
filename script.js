@@ -239,6 +239,9 @@ function goTo(name) {
     target.scrollTop = 0;
   }
 
+  // Lancer la musique à l'entrée du menu (premier clic utilisateur)
+  if (name === 'menu' && !bgmMuted) playBgm();
+
   // Stopper la musique si on revient au titre
   if (name === 'title') {
     stopBgm();

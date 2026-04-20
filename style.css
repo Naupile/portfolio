@@ -197,13 +197,16 @@ body::after {
   object-fit: cover; object-position: top center;
   /* Silhouette portrait organique : large en haut pour les cheveux, légèrement rétrécie en bas */
   border-radius: 58% 58% 36% 36% / 52% 52% 34% 34%;
-  border: 4px solid rgba(255,140,195,0.72);
+  border: 3px solid rgba(255,255,255,0.9);
   box-shadow:
-    0 0 0 3px rgba(255,105,180,0.28),
-    0 0 28px rgba(255,105,180,0.72),
-    0 0 60px rgba(255,20,147,0.35),
-    0 0 95px rgba(94,23,235,0.2);
-  filter: saturate(1.12) brightness(1.06) contrast(1.03);
+    0 0 0 5px rgba(255,105,180,0.75),
+    0 0 0 8px rgba(255,255,255,0.15),
+    0 0 16px rgba(255,105,180,1),
+    0 0 32px rgba(255,105,180,0.9),
+    0 0 55px rgba(255,20,147,0.65),
+    0 0 85px rgba(94,23,235,0.5),
+    0 0 120px rgba(94,23,235,0.22);
+  filter: saturate(1.18) brightness(1.08) contrast(1.04);
   animation: char-float 3.5s ease-in-out infinite;
 }
 @keyframes char-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
@@ -736,11 +739,7 @@ body::after {
     0 100%, 0 8px
   );
 }
-.creation-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--pink), var(--lavender));
-}
+.creation-card::before { display: none; }
 .creation-card:hover {
   transform: translateY(-4px);
   border-color: rgba(135,206,235,0.55);
@@ -858,6 +857,68 @@ body::after {
   line-height: 0;
 }
 
+/* ===================== WIN98 BARS ===================== */
+.win98-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  background: linear-gradient(90deg, #5e17eb 0%, #9040c0 55%, #5090cc 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.inner-screen > .win98-bar {
+  margin: -40px -40px 24px -40px;
+}
+
+.title-card > .win98-bar {
+  margin: -52px -44px 28px -44px;
+}
+
+.creation-card > .win98-bar {
+  margin: -22px -22px 14px -22px;
+}
+
+.xp-card > .win98-bar {
+  margin: -14px -14px 10px -14px;
+}
+
+.win98-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.win98-controls {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.win98-controls span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 13px;
+  background: rgba(255,180,230,0.28);
+  border: 1px solid rgba(255,255,255,0.65);
+  border-right-color: rgba(0,0,0,0.4);
+  border-bottom-color: rgba(0,0,0,0.4);
+  font-size: 8px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.win98-controls span:hover {
+  background: rgba(220,100,180,0.55);
+}
+
 /* ===================== SCROLLBAR ===================== */
 .screen-scroll::-webkit-scrollbar { width: 4px; }
 .screen-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
@@ -865,6 +926,7 @@ body::after {
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 820px) {
+  .inner-screen > .win98-bar { margin: -24px -16px 18px -16px; }
   .menu-layout      { flex-direction: column; gap: 28px; }
   .menu-fairy       { display: none; }
   .about-grid       { grid-template-columns: 1fr; }
