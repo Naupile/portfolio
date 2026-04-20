@@ -44,7 +44,7 @@ body::before {
   content: '';
   position: fixed; inset: -20px;          /* légèrement oversized pour éviter les bords du blur */
   background: url('assets/fond-ecran.jpg') center/cover no-repeat;
-  filter: blur(8px);
+  filter: blur(3px);
   z-index: -3;
 }
 body::after {
@@ -54,7 +54,7 @@ body::after {
     radial-gradient(ellipse at 10% 20%, rgba(135,206,235,0.2) 0%, transparent 45%),
     radial-gradient(ellipse at 90% 80%, rgba(255,20,147,0.25) 0%, transparent 45%),
     radial-gradient(ellipse at 50% 50%, rgba(94,23,235,0.18)  0%, transparent 65%),
-    linear-gradient(150deg, rgba(13,0,24,0.84) 0%, rgba(28,0,53,0.8) 55%, rgba(46,0,85,0.84) 100%);
+    linear-gradient(150deg, rgba(13,0,24,0.68) 0%, rgba(28,0,53,0.62) 55%, rgba(46,0,85,0.68) 100%);
   z-index: -2;
   animation: bg-shift 14s ease-in-out infinite alternate;
   pointer-events: none;
@@ -919,19 +919,45 @@ body::after {
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 820px) {
-  .inner-screen > .win98-bar { margin: -24px -16px 18px -16px; }
-  .menu-layout      { flex-direction: column; gap: 28px; }
-  .menu-fairy       { display: none; }
+  /* Win98 bars : marges négatives recalculées selon le nouveau padding */
+  .inner-screen > .win98-bar  { margin: -24px -16px 18px -16px; }
+  .title-card   > .win98-bar  { margin: -36px -22px 22px -22px; }
+
+  /* Grilles */
   .about-grid       { grid-template-columns: 1fr; }
   .creations-grid   { grid-template-columns: 1fr; }
   .xp-grid          { grid-template-columns: 1fr; }
   .skill-bar-row    { grid-template-columns: 1fr; gap: 5px; }
-  .inner-screen     { padding: 24px 16px; }
-  .title-card       { padding: 36px 22px; }
-  .about-photo-col  { text-align: center; }
+
+  /* Containers */
+  .inner-screen  { padding: 24px 16px; }
+  .title-card    { padding: 36px 22px; }
+  .about-photo-col { text-align: center; }
+
+  /* Menu : empiler photo + boutons verticalement */
+  .menu-winx-wrap   { flex-direction: column; align-items: center; gap: 16px; }
+  .menu-panel-left  { flex: none; width: 100%; max-width: 340px; }
+  .menu-char-wrap   { min-height: 200px; order: -1; } /* photo au-dessus des boutons */
+  .menu-char-photo  { width: 150px; height: 195px; }
+  .menu-char-halo   { width: 180px; height: 180px; }
 }
 
-@media (max-width: 500px) {
-  .game-title     { font-size: 18px; }
-  .menu-item      { font-size: 11px; }
+@media (max-width: 480px) {
+  /* Cacher la photo sur très petit écran pour gagner de la place */
+  .menu-char-wrap { display: none; }
+
+  /* Ajuster le padding et la barre win98 de la title-card */
+  .title-card           { padding: 24px 16px; }
+  .title-card > .win98-bar { margin: -24px -16px 18px -16px; }
+
+  .game-title { font-size: 16px; }
+  .tagline    { font-size: 8px; }
+}
+
+/* ===================== ÉCRANS TACTILES ===================== */
+/* (hover: none) détecte les appareils sans souris = smartphones/tablettes */
+/* On cache le curseur fée et on restaure le curseur natif du navigateur  */
+@media (hover: none) {
+  *, *::before, *::after { cursor: auto !important; }
+  #cursor-wing { display: none; }
 }
