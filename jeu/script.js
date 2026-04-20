@@ -1,8 +1,13 @@
-document.addEventListener("click", () => {
+function startGameMusic() {
   const audio = document.getElementById("backgroundNoise");
   audio.loop = true;
+  audio.volume = 0.6;
   audio.play().catch(() => {});
-}, { once: true });
+  document.removeEventListener("click", startGameMusic);
+  document.removeEventListener("touchstart", startGameMusic);
+}
+document.addEventListener("click", startGameMusic);
+document.addEventListener("touchstart", startGameMusic);
 
 let keepCrisisOnEnd = false;
 let endingType = "";
