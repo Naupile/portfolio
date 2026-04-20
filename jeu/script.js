@@ -1,6 +1,7 @@
 document.addEventListener("click", () => {
   const audio = document.getElementById("backgroundNoise");
-  audio.play();
+  audio.loop = true;
+  audio.play().catch(() => {});
 }, { once: true });
 
 let keepCrisisOnEnd = false;

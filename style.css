@@ -291,17 +291,9 @@ body::after {
   );
 }
 
-/* Coins déco pixel */
+/* Coins déco supprimés — remplacés par la win98-bar */
 .title-card::before,
-.title-card::after {
-  content: '';
-  position: absolute;
-  width: 20px; height: 20px;
-  border-color: var(--blue);
-  border-style: solid;
-}
-.title-card::before { top: 6px;    left: 6px;    border-width: 2px 0 0 2px; }
-.title-card::after  { bottom: 6px; right: 6px;   border-width: 0 2px 2px 0; }
+.title-card::after { display: none; }
 
 .title-sparkle-row {
   color: var(--blue);

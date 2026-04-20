@@ -28,7 +28,12 @@ cursorEl.innerHTML = `
 
 let mouseX = -100, mouseY = -100;
 
+// Caché par défaut : visible seulement après le premier mousemove
+// → sur mobile, mousemove ne se déclenche jamais, donc il reste invisible
+cursorEl.style.display = 'none';
+
 document.addEventListener('mousemove', (e) => {
+  cursorEl.style.display = '';
   mouseX = e.clientX;
   mouseY = e.clientY;
   cursorEl.style.left = mouseX + 'px';
