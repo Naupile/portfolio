@@ -956,3 +956,12 @@ body::after {
   *, *::before, *::after { cursor: auto !important; }
   #cursor-wing { display: none; }
 }
+
+/* Carte affiche poster */
+.creation-card--poster { display: flex; flex-direction: column; }
+.poster-img {
+  width: 100%; border-radius: 3px;
+  margin-bottom: 14px;
+  object-fit: cover; max-height: 340px;
+  border: 1px solid rgba(135,206,235,0.2);
+}
