@@ -973,7 +973,7 @@ body::after {
   object-fit: cover;
   border: 2px solid #000; /* cohérent avec le style "fenêtre win98" à bordure marquée */
   background: #000;
-  margin: 0;
+margin: 0 0 16px 0; /* espace ajouté sous la vidéo */
 }
 
 .creation-media::-webkit-media-controls-panel {
