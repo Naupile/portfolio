@@ -965,3 +965,17 @@ body::after {
   object-fit: cover; max-height: 340px;
   border: 1px solid rgba(135,206,235,0.2);
 }
+
+.creation-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ta vidéo est au format carré 1080x1080, à retirer si tu préfères que le lecteur garde sa hauteur native */
+  object-fit: cover;
+  border: 2px solid #000; /* cohérent avec le style "fenêtre win98" à bordure marquée */
+  background: #000;
+  margin: 0;
+}
+
+.creation-media::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.6);
+}
